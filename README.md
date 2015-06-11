@@ -1,2 +1,2 @@
-# SSC32-UNO32
-Chipkit Uno32 - SSC-32 library
+# Project Onyx
+Development of Networked Quadruped meant to assist "MiddleMan" home-automation controller in physical tasks
