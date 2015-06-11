@@ -93,9 +93,18 @@ int LegUp[4] = {0,0,0,0}; //Leg up = 1 , Leg Grounded = 0; (codewise)
 int resolution = 1; //incremental resolution
 //----------------------------------------------------------------------------------------//
 void setup(){
-   initialize(1);
-   delay(3000);
-   ind = 3;
+    SSC32 SSC;
+        SSC.begin(115200);
+        int SafeStartX = 4.5;
+        int SafeStartY = 1.0;
+            pinMode(servoPower, OUTPUT);
+            for(int i=0;i<4;i++){
+                LegUp[i] = 1;
+            }
+                 digitalWrite(servoPower,1);
+                 BodyX = SafeStartX;
+                 BodyY = SafeStartY;          
+           ind = 3;
 }
 void loop(){
     
@@ -112,24 +121,7 @@ void rotateServo(){
         Serial.println(700);        
       }   
       
-void initialize(int mode){ //takes mode # and communication baud rate to begin and control following movements //setup style preference 
-    SSC32 SSC;
-    SSC.begin(115200);
-    int SafeStartX = 4.5;
-    int SafeStartY = 1.0;
-    pinMode(servoPower, OUTPUT);
-    for(int i=0;i<4;i++){
-        LegUp[i] = 1;
-    }
-    
-      if(mode == 1){
-         digitalWrite(servoPower,1);
-         BodyX = SafeStartX;
-         BodyY = SafeStartY;
-         
-      }
                              
-    }
 
 void raiseLeg(int leg){
     if(leg<4){
