@@ -21,7 +21,7 @@
 #define OFFSET_MAX 100
 
 #define NONE 0
-#define MOVEMENT 1
+#define MOVE 1
 #define OFFSET 2
 #define DISCRETE 3
 

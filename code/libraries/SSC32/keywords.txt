@@ -1,24 +1,13 @@
-#######################################
-# Syntax Coloring Map Servo
-#######################################
-
-#######################################
-# Datatypes (KEYWORD1)
-#######################################
-
-Servo	KEYWORD1
-
-#######################################
-# Methods and Functions (KEYWORD2)
-#######################################
-attach	KEYWORD2
-detach	KEYWORD2
-write	KEYWORD2
-read	KEYWORD2
-attached	KEYWORD2
-writeMicroseconds	KEYWORD2
-readMicroseconds	KEYWORD2
-
-#######################################
-# Constants (LITERAL1)
-#######################################
+SSC32	KEYWORD1
+newGroup	KEYWORD2
+abortGroup	KEYWORD2
+executeGroup	KEYWORD2
+servoMove	KEYWORD2
+servoMoveTime	KEYWORD2
+offset	KEYWORD2
+discrete	KEYWORD2
+byte	KEYWORD2
+moving	KEYWORD2
+query	KEYWORD2
+readDigital	KEYWORD2
+readAnalog	KEYWORD2

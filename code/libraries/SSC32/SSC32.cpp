@@ -301,7 +301,7 @@ boolean SSC32::offset(int channel, int offset)
 		return false;
 	}
 
-	if (offset < MIN_OFFSET || offset > OFFSET_MAX)
+	if (offset < OFFSET_MIN || offset > OFFSET_MAX)
 	{
 		//Offset not valid
 		return false;
