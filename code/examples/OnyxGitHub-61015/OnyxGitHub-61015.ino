@@ -102,9 +102,16 @@ void setup(){
                 LegUp[i] = 1;
             }
                  digitalWrite(servoPower,1);
+                 delay(1000);
                  BodyX = SafeStartX;
-                 BodyY = SafeStartY;          
-           ind = 3;
+                 BodyY = SafeStartY; 
+                   // SSC.newGroup(MOVE);
+                    //IK(BodyX, BodyY);
+                        for(int i=0;i<12;i++){    
+                            SSC.servoMove(i, 1500, 100);
+                        }
+                  //  SSC.executeGroup();
+                    
 }
 void loop(){
     

@@ -2,36 +2,12 @@
 /**
 *	@file SSC32.h
 *	@brief Control Lynxmotion's SSC-32 with Arduino.
-*	@author Martin Peris (http://www.martinperis.com)
-*	@date 5/2/2011
-*
-*	@change 27.10.2011 by Marco Schwarz <marco.schwarz@cioppino.net>
+*	@author Quinn Mikelson (Mikelson.ml)
+*	@date 6/10/2015
 */
 
-/*
-  SSC32.cpp - Control Lynxmotion's SSC-32 V2 with Arduino
-  Copyright (c) 2011 Martin Peris (http://www.martinperis.com).
-  All right reserved.
 
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
-
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-  Lesser General Public License for more details.
-
-  You should have received a copy of the GNU Lesser General Public
-  License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
-/*
-* @author Marco Schwarz
-* @descr for Arduino >= 1.0rc2 
-*/ 
+  //SSC32.cpp - Control Lynxmotion's SSC-32 
 #if defined(ARDUINO) && ARDUINO >= 100
 #include "Arduino.h"	// for digitalRead, digitalWrite, etc
 #endif
