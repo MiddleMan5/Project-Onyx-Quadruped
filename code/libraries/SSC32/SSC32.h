@@ -51,7 +51,7 @@ class SSC32
 		int _cmdType;  //Type of command
 
 	public:
-
+		SSC32();
 		
 		void begin(int baud);
 

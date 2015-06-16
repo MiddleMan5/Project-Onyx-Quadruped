@@ -14,6 +14,12 @@
 
 #include "SSC32.h"
 
+
+SSC32::SSC32() 
+{
+	_moveTime = -1;
+	_cmdType = NONE;
+}
 /**
 *	Begin the serial port communications. Should be called inside the setup() function of the Arduino.
 *	@param baud	The speed (in symbols per second) for the serial port

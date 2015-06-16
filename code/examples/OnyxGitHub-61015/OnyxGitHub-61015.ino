@@ -93,7 +93,7 @@ int LegUp[4] = {0,0,0,0}; //Leg up = 1 , Leg Grounded = 0; (codewise)
 int resolution = 1; //incremental resolution
 //----------------------------------------------------------------------------------------//
 void setup(){
-    SSC32 SSC;
+    SSC32 SSC; 
         SSC.begin(115200);
         int SafeStartX = 4.5;
         int SafeStartY = 1.0;
@@ -105,12 +105,13 @@ void setup(){
                  delay(1000);
                  BodyX = SafeStartX;
                  BodyY = SafeStartY; 
-                   // SSC.newGroup(MOVE);
+                    SSC.newGroup(MOVE);
                     //IK(BodyX, BodyY);
                         for(int i=0;i<12;i++){    
-                            SSC.servoMove(i, 1500, 100);
+                           // SSC.servoMove(i, 1500, 100);
+                            if(SSC.servoMove(i, 1500) == false)Serial.print("Error");
                         }
-                  //  SSC.executeGroup();
+                   if(SSC.executeGroup() == false)Serial.print("Error");
                     
 }
 void loop(){
