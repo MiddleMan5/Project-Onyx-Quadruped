@@ -55,7 +55,7 @@ boolean SSC32::newGroup(int type)
 	return true;
 
 }
-
+/*  */
 /**
 *	Abort a group of commands
 *	@return It will return false if a group command has not been started by calling newGroup. True otherwise.
@@ -94,7 +94,7 @@ boolean SSC32::executeGroup()
 	if (_moveTime != -1)
 	{
 		//Set the time to complete movement
-		Serial.print(" T");
+		Serial.print("T");
 		Serial.print(_moveTime);
 	}
 
@@ -138,9 +138,8 @@ boolean SSC32::servoMove(int channel, int position)
 	//We are good to go
 	Serial.print("#");
 	Serial.print(channel);
-	Serial.print(" P");
+	Serial.print("P");
 	Serial.print(position);
-	Serial.print(" ");
 
 	if (_cmdType == NONE)
 	{
@@ -192,9 +191,9 @@ boolean SSC32::servoMove(int channel, int position, int speed)
 	//We are good to go
 	Serial.print("#");
 	Serial.print(channel);
-	Serial.print(" P");
+	Serial.print("P");
 	Serial.print(position);
-	Serial.print(" S");
+	Serial.print("S");
 	Serial.print(speed);
 	Serial.print(" ");
 
@@ -248,16 +247,14 @@ boolean SSC32::servoMoveTime(int channel, int position, int moveTime)
 	//We are good to go
 	Serial.print("#");
 	Serial.print(channel);
-	Serial.print(" P");
+	Serial.print("P");
 	Serial.print(position);
 
 	if (_cmdType == NONE)
 	{
 		//This is a single command so execute it
 		Serial.print(" T");
-		Serial.print(moveTime);
-		Serial.print(" ");
-		Serial.println();
+		Serial.println(moveTime);
 	}else{
 		//This is a command group. Store the "move time" for later
 		_moveTime = moveTime;
