@@ -1,8 +1,4 @@
 /*
-  Simple .h and .cpp Templates to facilitate creation of libraries 
-*/.
-
-/*
   <docname> - <description>
   Created by:     <author>
   Initial Commit: <date>
