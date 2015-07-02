@@ -27,8 +27,9 @@
     void loop(){
         
         onyxIdle();      //Default State. Auto Safe mode(auto standLevel, auto standCenter, auto power, auto refresh)
-        onyxSaftey(); //Provides State limiting control. Overtime, Power Off,
+        onyxSaftey();    //Provides State limiting control. Overtime, Power Off,
         onyxSense();     //Scan for input change
         onxyState();     //Check for State change (Serial Event, Hardware Event{Gyro, etc.}, Timer shutdown event)
+        onyxMap();       //If any movement change, update Look Up Table
         
     }//loop
