@@ -1,6 +1,12 @@
 #include "config.h"
+<<<<<<< HEAD
 SSC32 SSC;
 void setup(){ 
+=======
+
+void setup(){
+    SSC32 SSC; 
+>>>>>>> dd7d05d7aaa7e2a4a80c8e5f4a3a6cd263a294d5
         SSC.begin(115200);
         int SafeStartX = 4.5;
         int SafeStartY = 1.0;
@@ -21,6 +27,7 @@ void setup(){
                     
 }
 void loop(){
+<<<<<<< HEAD
 switch (Serial.read()){
     case 'q':
     LegUp[0]=1;
@@ -85,6 +92,10 @@ switch (Serial.read()){
     
 }
 
+=======
+    
+}
+>>>>>>> dd7d05d7aaa7e2a4a80c8e5f4a3a6cd263a294d5
 void rotateServo(){
         for(int i=0;i<4;i++){
         ServoNext[i*3] = CoxaRotation[i];    
@@ -211,8 +222,13 @@ float IK(float x, float y){ //Inverse Kinematic routine
             float deg1=theta1*180/pi; //conversion to degrees using new variable
             float deg2=theta2*180/pi;
            //IK Global Variable updates
+<<<<<<< HEAD
             pulse1=(deg1*10)-1500;//offset to mechanical center (0 degrees IK) 
             pulse2invert=(deg2*10)-600;//offset to mechanical center (90 degrees IK)
+=======
+            pulse1=(deg1*10)+1500;//offset to mechanical center (0 degrees IK) 
+            pulse2invert=(deg2*10)+600;//offset to mechanical center (90 degrees IK)
+>>>>>>> dd7d05d7aaa7e2a4a80c8e5f4a3a6cd263a294d5
             pulse1invert = map(pulse1,750, 2200,2200,750);
             pulse2 = map(pulse2invert, 750, 2200,2200,750);
           
