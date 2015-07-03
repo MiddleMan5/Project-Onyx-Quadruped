@@ -7,8 +7,8 @@ Initialize::Initialize() {
 
 void Initialize::begin() {
 	SSC.begin(baud);
-	if (Serial.available() > 0){
-		if (sscReturn == 1){
+	if(Serial.available() > 0){
+		if(sscReturn == 1){
 			Serial.println("ver");
 		}
 	}

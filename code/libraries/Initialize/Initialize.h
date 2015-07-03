@@ -8,7 +8,7 @@
 #endif
 
 //-Extra Includes-
-#include "config.h"
+#include <config.h>
 #include <SSC32.h>
 
 #define STANDARD 0

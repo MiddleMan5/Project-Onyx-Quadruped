@@ -53,7 +53,7 @@ class SSC32
 	public:
 		SSC32();
 		
-		void begin(int baud);
+		void begin(int br);
 
 		boolean newGroup(int type);
 		boolean abortGroup();

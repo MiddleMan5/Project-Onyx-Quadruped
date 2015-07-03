@@ -1,6 +1,6 @@
 
 /**
-*	@file IK.h
+*	@file SSC32.h
 *	@brief Control Lynxmotion's SSC-32 with Arduino.
 *	@author Quinn Mikelson (Mikelson.ml)
 *	@date 6/10/2015
@@ -24,9 +24,9 @@ SSC32::SSC32()
 *	Begin the serial port communications. Should be called inside the setup() function of the Arduino.
 *	@param baud	The speed (in symbols per second) for the serial port
 */
-void SSC32::begin(int baud)
+void SSC32::begin(int baudr)
 {
-	Serial.begin(baud);
+	Serial.begin(baudr);
 }
 
 
