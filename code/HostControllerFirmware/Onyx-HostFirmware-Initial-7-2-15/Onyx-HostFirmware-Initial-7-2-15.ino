@@ -1,3 +1,11 @@
+#include <onyxIK.h>
+#include <onyxState.h>
+#include <onyxSense.h>
+#include <onyxSafety.h>
+#include <onyxIdle.h>
+#include <Initialize.h>
+#include <StateControl.h>
+#include <Initialize.h>
 /**
 * Project Onyx
 * Master Branch - Integrated Host Firmware
