@@ -1,14 +1,14 @@
-//Comment
-//Comment
-//Comment
+//Comments
 #include <Initialize.h>
 SSC32 SSC;
 
-Initialize::Initialize() {
+Initialize::Initialize() 
+{
 	_mode = STANDARD;
 }
 
-void Initialize::begin() {
+void Initialize::begin() 
+{
 	SSC.begin(baud);
 	if(Serial.available() > 0){
 		if(sscReturn == 1){

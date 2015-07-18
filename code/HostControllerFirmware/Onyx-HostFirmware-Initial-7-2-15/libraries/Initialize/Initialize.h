@@ -9,7 +9,7 @@
 
 //-Extra Includes-
 #include "config.h"
-#include <SSC32.h>
+#include "SSC32.h"
 
 #define STANDARD 0
 #define DEBUG    1
@@ -21,6 +21,7 @@ class Initialize {
 	public:
 		Initialize();
 		void begin();
+		
 
 };
 
