@@ -1,8 +1,8 @@
 //Onyx library creates classes to represent the various functions and systems of the Onyx Robotic Quadruped.
 //The current CPU is an arduino-like Chipkit Uno32
 
-#ifndef _CPU_H
-#define _CPU_H
+#ifndef _Onyx_H
+#define _Onyx_H
 
 
 #if (ARDUINO >= 100)
@@ -60,20 +60,31 @@
 
 #define pi 3.14159;
 
-class CPU {
+class Onyx {
 	private:
 		 int _modeCPU;
-		bool _powerServo; 
-		bool _powerMain;
-	
+
         int _ServoList[12];
 	public:
-		CPU();
+		Onyx();
 		void begin(); //Start the object and 
 		void servos(int power);
 		void startup(int mode);
 		void idle();
 		void moveBody(int Command);
 };
+
+class Power {
+	private:
+		Power();
+		bool _powerServo; 
+		bool _powerMain;
+	public: 
+		void servos(int power);
+		void startup(int mode);
+		void idle();
+		void moveBody(int Command);
+};
+
 
 #endif
