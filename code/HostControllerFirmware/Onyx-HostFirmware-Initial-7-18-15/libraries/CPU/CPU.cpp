@@ -28,6 +28,11 @@ void CPU::servos(int power)
 		else digitalWrite(relayServos, LOW);
 			_powerServo = OFF;
 	}
+	if(power==TOGGLE){ //Toggle Servo Relay
+    _powerServo = !_powerServo;
+	digitalWrite(relayServos, _powerServo);
+		
+	}
 }
 
 void CPU::startup(int mode)
@@ -53,13 +58,10 @@ void CPU::idle()
 {
 	if(Serial.available()>0){
 		switch (Serial.read()){
-			case 'w':
-			Serial.print("SERVOS ONLINE");
-				servos(ON);
+			case 'p':
+				servos(TOGGLE);
 			break;
 			case 's':
-			Serial.print("SERVOS OFFLINE");
-				servos(OFF);
 			break;
 			case 'a':
 			
@@ -70,6 +72,11 @@ void CPU::idle()
 			
 		}
 	}
+	
+}
+
+void CPU::moveBody(int Command) //Move center of mass in direction (UP,DOWN,LEFT,RIGHT)
+{
 	
 }
 

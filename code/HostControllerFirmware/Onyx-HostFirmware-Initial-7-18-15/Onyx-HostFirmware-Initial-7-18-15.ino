@@ -5,13 +5,6 @@
 */
 #include <CPU.h>
 
-#include <onyxIK.h>
-#include <onyxState.h>
-#include <onyxSense.h>
-#include <onyxSafety.h>
-#include <onyxIdle.h>
-
-
 CPU Onyx;
 
     void setup(){ 
@@ -25,7 +18,6 @@ CPU Onyx;
     
     void loop(){
         Onyx.idle();
-        //onyxIdle();      //Default State. Auto Safe mode(auto standLevel, auto standCenter, auto power, auto refresh)
         //onyxSaftey();    //Provides State limiting control. Overtime, Power Off,
        // onyxSense();     //Scan for input change
        // onxyState();     //Check for State change (Serial Event, Hardware Event{Gyro, etc.}, Timer shutdown event)
