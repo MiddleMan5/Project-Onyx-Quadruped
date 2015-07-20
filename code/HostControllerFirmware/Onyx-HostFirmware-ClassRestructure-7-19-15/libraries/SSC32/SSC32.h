@@ -54,7 +54,7 @@ class SSC32
 		SSC32();
 		
 		void begin(int br);
-
+		void check();
 		boolean newGroup(int type);
 		boolean abortGroup();
 		boolean executeGroup();

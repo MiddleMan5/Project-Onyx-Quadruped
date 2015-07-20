@@ -1,49 +1,47 @@
 #include "Onyx.h"
 
+SSC32 SSC;
+Power Actuators(relayServos);
+Leg FL(0);
+Leg RL(12);
+Leg FR(16);
+Leg RR(28);
 
 Onyx::Onyx() 
 : _ServoList {0,1,2,12,13,14,16,17,18,28,29,30} //I literally have no idea why this works 
 {
-	Power Actuators;
-	Actuators.setMainRelay(relayServos);
 	setMode(LOWPOWER);
 }
 
 void Onyx::setMode(int mode)
 {
-	_modeCPU = mode;
-	if(mode==STARTUP)stand();
+	_mode = mode;
+	if(mode==STARTUP)startup();
+	if(mode==STANDBY)listen();
+	if(mode==SHUTDOWN)Actuators.ToggleMain(OFF);
+	if(mode==LOWPOWER)setMode(SHUTDOWN);
+	if(mode==REBOOT)startup();
 }
 
-void Onyx::stand()
+void Onyx::startup()
 {
-	SSC32 SSC;
+	Serial.end();
 	SSC.begin(baudrate);
-	if (Serial.available() > 0){
-		if (sscReturn == 1){
-			Serial.println("ver");
-		}
-	}
+	SSC.check();
 	SSC.newGroup(MOVE);
-	delay(20);
 	for(int i=0; i<12;i++){
 		SSC.servoMove(_ServoList[i],1500,1000);
 	}
 	SSC.executeGroup();
-	setMode(STANDARD);
+	setMode(STANDBY);
 }
 
-void Onyx::power(int subSystem, int state)
-{
-	
-}
-
-void Onyx::idle()
+void Onyx::listen()
 {
 	if(Serial.available()>0){
 		switch (Serial.read()){
 			case 'p':
-				servos(TOGGLE);
+				Actuators.ToggleMain(TOGGLE);
 			break;
 			case 's':
 			break;
@@ -53,7 +51,6 @@ void Onyx::idle()
 			case 'd':
 			
 			break;
-			
 		}
 	}
 	
@@ -64,33 +61,41 @@ void Onyx::moveBody(int Command) //Move center of mass in direction (UP,DOWN,LEF
 	
 }
 
-void Power::Power()
+Power::Power(int Main_Relay)
 {
-	_powerMain = OFF;
+	ToggleMain(OFF);
+	setMainPin(Main_Relay);
 }
 
-void Power::setMainRelay(int mainPin)
+void Power::setMainPin(int pin)
 {
+	Main_Relay = pin;
 	ToggleMain(OFF);
     pinMode(Main_Relay, OUTPUT);
 	ToggleMain(_powerMain);
 }
 
 void Power::ToggleMain(int state){
-	if(power==ON){ //Turn Servo Relay On
-		if(_powerServo==ON)return; //Are Servos already on?
-		else digitalWrite(relayServos, HIGH);
-			_powerServo = ON;
+	if(state != _powerMain){
+		if(state==TOGGLE)ToggleMain(!_powerMain);
+		else {
+			digitalWrite(Main_Relay,state);
+			_powerMain = state;
+		}
 	}
-	if(power==OFF){ //Turn Servo Relay Off
-		if(_powerServo==OFF)return; //Are Servos already off?
-		else digitalWrite(relayServos, LOW);
-			_powerServo = OFF;
-	}
-	if(power==TOGGLE){ //Toggle Servo Relay
-    _powerServo = !_powerServo;
-	digitalWrite(relayServos, _powerServo);
-		
-	}
+	else return;
 	
+}
+
+Leg::Leg(int index)
+{
+	Servo Coxa(index);
+	Servo Knee(index + 1);
+	Servo Ankle(index + 2);
+}
+
+Servo::Servo(int pin)
+{
+	_pin = pin;
+	_isExternal = 1;
 }

@@ -35,6 +35,15 @@ void SSC32::begin(int br)
 *	@param type	The type of group command. Should be one of the following : MOVE, OFFSET, DISCRETE
 *	@return It will return false if a previous call to newGroup has not been finished yet by calling executeGroup. True otherwise.
 */
+void SSC32::check()
+{
+	if (Serial.available() > 0){
+			Serial.println("ver");
+			Serial.println(" ");
+			delay(20);
+	}
+}
+
 boolean SSC32::newGroup(int type)
 {
 
@@ -52,6 +61,7 @@ boolean SSC32::newGroup(int type)
 	}
 
 	_cmdType = type;
+	delay(20); //Weird SSC-32 behaviour without delay 
 	return true;
 
 }

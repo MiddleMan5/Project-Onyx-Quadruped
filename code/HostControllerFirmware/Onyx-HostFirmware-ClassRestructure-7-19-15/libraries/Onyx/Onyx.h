@@ -34,30 +34,31 @@
 #define relayServos 27
 
 //Leg Indicator LED Pins
-#define FL 35
-#define FR 34
-#define RR 8
-#define RL 9
+#define iFL 35
+#define iFR 34
+#define iRR 8
+#define iRL 9
     
 //-------------------------------------------------------------------------------------------------------------
 
 //On Off Toggle References
-#define ON      0
-#define OFF     1
+#define ON      1
+#define OFF     0
+#define HIGH    1
+#define OFF     0
 #define TOGGLE  2
 
 //runtime modes
 #define REBOOT    0
 #define LOWPOWER  1
 #define STARTUP   2
-#define IDLE      3
-#define LISTENING 4
-#define STOPPED   5
-#define MOVING    6
-#define DEBUG     7 
-#define VIRTUAL   8
-#define SHUTDOWN  9
-#define EMERGENCY 10 
+#define STANDBY   3
+#define STOPPED   4
+#define MOVING    5
+#define DEBUG     6 
+#define VIRTUAL   7
+#define SHUTDOWN  8
+#define ERROR     9
 
 //moveXXXX directions
 #define UP    0
@@ -69,26 +70,58 @@
 
 class Onyx {
 	private:
-		static int _modeCPU;
+		int _mode;
         int _ServoList[12];
 		
-		void stand();
+		void startup();
 	public:
 		Onyx();
-		void setMode(int mode); //Starts the system in predefined runtime state
-		void power(int subSystem, int state); //IE: Onyx.power(Servos,ON); (Takes ON, OFF, or TOGGLE)
+		void setMode(int mode); //sets runtime state
 		void moveBody(int direction);
+		void listen();
 };
 
 class Power {
 	private:
-		static bool _powerServo; 
-		static bool _powerMain;
+		int Main_Relay;
+		bool _powerMain; //Power State (ON,OFF)
 	public: 
-		Power();
-		void Servos(int power);
-		void moveBody(int Command);
+		Power(int Main_Relay);
+		void setMainPin(int pin);
+		void ToggleMain(int state);
 };
 
+class Servo {
+	private:
+		int _pin;
+		bool _isExternal;
+		bool _isGroup; //Is the servo part of a group?
+		int _groupNumber;
+	public: 
+		Servo(int pin);
+		void move(int pulse);
+		void setGroup(int groupNumber);
+};
+
+class Leg {
+	private:
+	float _Trochanter_X;
+	float _Trochanter_Y;
+
+	float _Femur_X;
+	float _Femur_Y; 
+	float _Femur;
+	float _L1;
+	
+	float _Tibia;
+	float _Tarsus;
+	float _L2;
+	
+		int _quadrant;
+		bool _isMaster;
+		bool _isSlave;
+	public: 
+		Leg(int index);
+};
 
 #endif
