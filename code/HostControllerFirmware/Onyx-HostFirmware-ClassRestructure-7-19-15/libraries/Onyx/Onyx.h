@@ -46,13 +46,20 @@
 #define OFF     1
 #define TOGGLE  2
 
-//startup modes
-#define STANDARD 0
-#define DEBUG    1
-#define VIRTUAL  2
-#define STARTUP  3
+//runtime modes
+#define REBOOT    0
+#define LOWPOWER  1
+#define STARTUP   2
+#define IDLE      3
+#define LISTENING 4
+#define STOPPED   5
+#define MOVING    6
+#define DEBUG     7 
+#define VIRTUAL   8
+#define SHUTDOWN  9
+#define EMERGENCY 10 
 
-//moveBody
+//moveXXXX directions
 #define UP    0
 #define DOWN  1
 #define LEFT  2
@@ -62,27 +69,24 @@
 
 class Onyx {
 	private:
-		 int _modeCPU;
-
+		static int _modeCPU;
         int _ServoList[12];
+		
+		void stand();
 	public:
 		Onyx();
-		void begin(); //Start the object and 
-		void servos(int power);
-		void startup(int mode);
-		void idle();
-		void moveBody(int Command);
+		void setMode(int mode); //Starts the system in predefined runtime state
+		void power(int subSystem, int state); //IE: Onyx.power(Servos,ON); (Takes ON, OFF, or TOGGLE)
+		void moveBody(int direction);
 };
 
 class Power {
 	private:
-		Power();
-		bool _powerServo; 
-		bool _powerMain;
+		static bool _powerServo; 
+		static bool _powerMain;
 	public: 
-		void servos(int power);
-		void startup(int mode);
-		void idle();
+		Power();
+		void Servos(int power);
 		void moveBody(int Command);
 };
 

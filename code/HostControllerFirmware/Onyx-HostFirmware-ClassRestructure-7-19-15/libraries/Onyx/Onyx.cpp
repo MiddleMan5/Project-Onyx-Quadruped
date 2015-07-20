@@ -4,40 +4,19 @@
 Onyx::Onyx() 
 : _ServoList {0,1,2,12,13,14,16,17,18,28,29,30} //I literally have no idea why this works 
 {
-	_modeCPU = STARTUP;
-	_powerServo = OFF;
-	_powerMain = ON;
-	
-	pinMode(relayServos, OUTPUT);
+	Power Actuators;
+	Actuators.setMainRelay(relayServos);
+	setMode(LOWPOWER);
 }
 
-void Onyx::begin()
- {
-	
-}
-
-void Onyx::servos(int power)
+void Onyx::setMode(int mode)
 {
-	if(power==ON){ //Turn Servo Relay On
-		if(_powerServo==ON)return; //Are Servos already on?
-		else digitalWrite(relayServos, HIGH);
-			_powerServo = ON;
-	}
-	if(power==OFF){ //Turn Servo Relay Off
-		if(_powerServo==OFF)return; //Are Servos already off?
-		else digitalWrite(relayServos, LOW);
-			_powerServo = OFF;
-	}
-	if(power==TOGGLE){ //Toggle Servo Relay
-    _powerServo = !_powerServo;
-	digitalWrite(relayServos, _powerServo);
-		
-	}
+	_modeCPU = mode;
+	if(mode==STARTUP)stand();
 }
 
-void Onyx::startup(int mode)
+void Onyx::stand()
 {
-	if(mode == STANDARD){
 	SSC32 SSC;
 	SSC.begin(baudrate);
 	if (Serial.available() > 0){
@@ -51,7 +30,12 @@ void Onyx::startup(int mode)
 		SSC.servoMove(_ServoList[i],1500,1000);
 	}
 	SSC.executeGroup();
-	}
+	setMode(STANDARD);
+}
+
+void Onyx::power(int subSystem, int state)
+{
+	
 }
 
 void Onyx::idle()
@@ -80,3 +64,33 @@ void Onyx::moveBody(int Command) //Move center of mass in direction (UP,DOWN,LEF
 	
 }
 
+void Power::Power()
+{
+	_powerMain = OFF;
+}
+
+void Power::setMainRelay(int mainPin)
+{
+	ToggleMain(OFF);
+    pinMode(Main_Relay, OUTPUT);
+	ToggleMain(_powerMain);
+}
+
+void Power::ToggleMain(int state){
+	if(power==ON){ //Turn Servo Relay On
+		if(_powerServo==ON)return; //Are Servos already on?
+		else digitalWrite(relayServos, HIGH);
+			_powerServo = ON;
+	}
+	if(power==OFF){ //Turn Servo Relay Off
+		if(_powerServo==OFF)return; //Are Servos already off?
+		else digitalWrite(relayServos, LOW);
+			_powerServo = OFF;
+	}
+	if(power==TOGGLE){ //Toggle Servo Relay
+    _powerServo = !_powerServo;
+	digitalWrite(relayServos, _powerServo);
+		
+	}
+	
+}
