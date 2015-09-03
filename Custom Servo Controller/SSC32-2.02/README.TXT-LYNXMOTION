@@ -1,0 +1,58 @@
+SSC32-V2.01
+
+Build for the ATmega168 processor using CodeVisionAVR Version 1.25.7a.
+
+After build, use the following command line to convert from .hex to .abl format:
+
+hex2abl ssc32.hex ssc32.abl 64 128
+
+(Enter hex2abl with no arguments to see a description.)
+
+Rename the .abl file and manually edit to add the following line as the
+first line in the .abl file (optional):
+
+SSC32-V2.01GP_BETA1
+
+(This should match the version number specified in globals.c.)
+
+-----------------------------------------------------------------------
+To build the GP version:
+
+*Edit the #defines at the top of appdefs.h to the following
+	// Defines to control conditional compilation
+	#define DEBUGCMD_ENABLE 0
+	#define REGRW_ENABLE 1
+	#define EEX_IS_EEI DEBUGCMD_ENABLE
+	#define FRACTION_ARG_ENABLE 0
+	#define HEXAPOD_SEQUENCER_ENABLE 0
+	#define BINARY_COMMAND_ENABLE 1
+	#define INTERNAL_EEPROM_ENABLE 1
+	#define EXTERNAL_EEPROM_ENABLE 1
+	#define GENERAL_SEQUENCER_ENABLE 1
+	#define BANKVAL_ENABLE 1
+	#define STARTUP_STRING_ENABLE 1
+
+*Change the version string in globals.c
+
+*Set the data stack size to 46 bytes
+
+-----------------------------------------------------------------------
+
+To build the EX version:
+*Edit the #defines at the top of appdefs.h to the following
+	// Defines to control conditional compilation
+	#define DEBUGCMD_ENABLE 0
+	#define REGRW_ENABLE 1
+	#define EEX_IS_EEI DEBUGCMD_ENABLE
+	#define FRACTION_ARG_ENABLE 0
+	#define HEXAPOD_SEQUENCER_ENABLE 1
+	#define BINARY_COMMAND_ENABLE 1
+	#define INTERNAL_EEPROM_ENABLE 0
+	#define EXTERNAL_EEPROM_ENABLE 0
+	#define GENERAL_SEQUENCER_ENABLE 0
+	#define BANKVAL_ENABLE 1
+	#define STARTUP_STRING_ENABLE 1
+
+*Change the version string in globals.c
+
+*Set the data stack size to 36 bytes

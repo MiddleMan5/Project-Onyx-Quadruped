@@ -1,0 +1,50 @@
+When programming into the SSC-32 (14.7456 MHz ATMega168), use the
+following fuse bit and lock bit settings.  (0=programmed,
+1=unprogrammed)
+
+Fuse Low Byte:
+
+SUT0 = 1       Crystal Oscillator, slowly rising power
+SUT1 = 1
+CKSEL0 = 1
+
+CKSEL1 = 1     Full swing external Crystal/Ceramic Resonator
+CKSEL2 = 1
+CKSEL3 = 0
+
+CKDIV8 = 1     Clock source NOT divided by 8
+CKOUT  = 1     Clock NOT output on PORTB0
+
+Fuse High Byte:
+
+BODLEVEL0 = 0  Brown-out reset enabled at 4.3V
+BODLEVEL1 = 0
+BODLEVEL2 = 1
+
+EESAVE =1      EEPROM is not reserved during chip erase
+
+WDTON = 1      Watchdog timer is OFF
+
+SPIEN = 0      serial programming enabled
+               (Fuse-bit unaccessible during serial programming)
+
+DWEN = 1       Debug wire disabled
+
+RSTDISBL = 1   External reset enabled
+
+Extended Fuse Byte:
+
+BOOTRST = 0    Go to boot-section after reset
+BOOTSZ0 = 1    128-word boot section (256 bytes)
+BOOTSZ1 = 1
+
+Lock Byte:
+
+BLB12 = 0     SPM/LPM not allowed to read/write boot section, at the same time
+BLB11 = 0     this disables interrupts during boot-loader execution
+
+BLB02 = 1     No SPM/LPM restrictions on App section
+BLB01 = 1
+
+LB2 = 1       No memory lock (otherwise the boot-loader is useless)
+LB1 = 1

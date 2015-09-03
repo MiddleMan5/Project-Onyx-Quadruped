@@ -1,0 +1,83 @@
+Contents
+========
+1. Outline
+2. Boot-Loader sources
+3. Utilities
+4. Porting Issues
+5. Quick Install
+
+1. Outline
+~~~~~~~~~~
+This directory contains Lynxmotion's original boot-loader for the
+Atmega8 and the source-code for the hex2abl utility, wrapped into the
+GNU build-system.
+
+The more interesting part is a port of the boot-loader to the Atmega168.
+
+2. Boot-Loader sources
+~~~~~~~~~~~~~~~~~~~~~~
+src/bootldr8.asm   -- original boot-loader
+src/bootldr168.asm -- boot-loader ported to Atmega168
+
+3. Utilities
+~~~~~~~~~~~~
+util/hex2abl.c
+
+4. Quick Install
+~~~~~~~~~~~~~~~~
+a) Type "make" to compile the boot-loader sources and the hex2abl
+  utility, type "make install" to install hex2abl into the default
+  location for binaries. Have a look at the file "INSTALL" for
+  detailed (generic) intallation instructions for the GNU
+  build-system.
+
+b) At your own risk use your favourite flash-utility and
+  flash-hardware to actually burn the new boot-loader.
+
+  src/bootldr168.txt
+
+  contains aceptable values for the fuse- and lock-bits.
+
+5. Porting Issues
+~~~~~~~~~~~~~~~~~
+
+a) Code Size:
+
+  It was a little bit difficult to keep the boot-loader size below 128
+  words (256 bytes). TO achieve this some initialization code has been
+  omitted, after examining the Atmega168 specs:
+
+  i) All I/O ports are configured as input per default, so there is no
+    need to do this initialization in the boot-loader. This spares 1
+    INSN.
+
+  ii) The interrupt vectors are located in the application program flash
+    section, so there is no need to program the MCUCR register. This
+    spares 3 INSNs.
+
+  Other points: the boot-loader uses the Y-pointer as base register when
+  accessing the control I/O ports for the serial port. This way, after
+  loading the Y-pointer with the address 0xC0, each individual I/O
+  access only needs a single INSN word.
+
+  After all, the boot-loader for the Atmega168 consumes 126 INSN
+  words, so there is still space for 2 instructions :)
+
+b) Compatibility with the new .abl files
+  This is actually a little bit strange: looking at the ``.abl'' files
+  for the new firmware reveals that the ``.abl'' files do NOT reflect
+  the fact that the page-size for the Atmega168 is doubled with
+  respect to the Atmega8.
+
+c) --page-size=SIZE option for hex2abl utility
+  My solution to the changed page-size of the Atmega168 is a
+  command-line switch for the hex2abl utility. This is implemented in
+  the version contained in this package:
+
+  hex2abl --page-sige=64 FILE.hex FILE.abl
+    Use the old page-size of 64 bytes (32 INSN words). This is also
+    the default.
+
+  hex2abl --page-sige=129 FILE.hex FILE.abl
+    Use a page-size of 128 bytes (64 INSN words). This would be needed
+    by my version of the Atmega168 boot-loader.

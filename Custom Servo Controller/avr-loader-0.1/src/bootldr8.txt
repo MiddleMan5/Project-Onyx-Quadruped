@@ -1,0 +1,38 @@
+Build using AVRStudio Version 4 or above.
+
+When programming into the SSC-32 (14.7456 MHz ATMega8), use the
+following fuse bit and lock bit settings.  (0=programmed,
+1=unprogrammed)
+
+CKSEL0 = 1
+CKSEL1 = 1
+CKSEL2 = 1
+CKSEL3 = 1
+
+SUT0 = 1
+SUT1 = 1
+
+BODEN = 0      Brown out detection enabled
+BODLEVEL = 0   Brown out level 4.0V
+
+BOOTRST = 0    Go to boot after reset
+
+BOOTSZ0 = 1    128-word boot section
+BOOTSZ1 = 1
+
+EESAVE = 1
+
+CKOPT = 0
+
+WDTON = 1
+
+RSTDISBL = 1
+
+BLB12 = 1     SPM not allowed to write boot section
+BLB11 = 0
+
+BLB02 = 1     No SPM/LPM restrictions on App section
+BLB01 = 1
+
+LB2 = 1       No memory lock
+LB1 = 1

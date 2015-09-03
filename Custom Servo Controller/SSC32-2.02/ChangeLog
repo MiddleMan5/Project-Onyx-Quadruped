@@ -1,0 +1,445 @@
+2008-06-29 17:46  claus
+
+	* src/globals.h: Fix NUM_CMD_PARSE_TABLE_ENTRIES.
+
+2008-06-08 16:33  claus
+
+	* src/compiler.h, src/globals.h, src/pulsedge.c: Cope with
+	  different conventions in GCC an CV-AVR for converting
+	  overflowing constant values to integer.
+
+2008-05-31 15:30  claus
+
+	* src/cmdproc.c: Fix binary modifier command.
+
+2008-05-31 13:54  claus
+
+	* configure.ac: Use a less complicated version string.
+
+2008-05-31 12:12  claus
+
+	* src/cmdproc.c, src/cmdproc.h, src/globals.c, src/globals.h: Fix
+	  parsing of modifiers. Allowed modifiers are '+' (delay execution
+	  of the current group-move command until the previous has
+	  terminated)
+	  and '~' (numbers are in binary).
+
+2008-05-31 12:11  claus
+
+	* src/serial.c: Fix some typos, breaking the new BAUD command.
+
+2008-05-30 10:02  claus
+
+	* src/cmdproc.c, src/cmdproc.h, src/globals.c, src/globals.h,
+	  src/serial.c, src/serial.h, src/ssc32.c: BAUD command (bit-rate
+	  is not remembered across power-cycles)
+
+2008-05-30 09:24  claus
+
+	* src/appdefs.h, src/cmdproc.c, src/cmdproc.h, src/globals.c: Fix
+	  modifier command.
+
+2008-05-30 09:11  claus
+
+	* src/appdefs.h, src/cmdproc.c, src/cmdproc.h, src/eeprom.c,
+	  src/globals.c, src/globals.h, src/gpseq.c, src/hexapod.c,
+	  src/regrw.c, src/serial.c, src/ssc32.c: Experimental new
+	  features: bit-endian binary mode for integers,
+	  synchronize group-move commands, 125000 bit/s communications
+
+2008-01-19 15:47  claus
+
+	* Makefile.am: Distribute lynx readme.
+
+2008-01-19 15:45  claus
+
+	* Makefile.am: Distribute lynx readme.
+
+2008-01-19 15:44  claus
+
+	* README.TXT-LYNX, README.TXT-LYNXMOTION: Renamed.
+
+2008-01-19 15:44  claus
+
+	* src/ssc32.c: Fix command-table check (accesses pgm-space)
+
+2008-01-19 15:43  claus
+
+	* src/regrw.c: Update to pgm...() macros.
+
+2008-01-19 15:43  claus
+
+	* src/pulsedge.c: Update to pgm...() macros.
+
+2008-01-19 15:43  claus
+
+	* src/eeprom.h: Proto-types.
+
+2008-01-19 15:42  claus
+
+	* src/eeprom.c: Fix internal eeprom access.
+
+2008-01-19 15:42  claus
+
+	* src/cmdproc.c: Make pgm/eep_...() macros a little bit more handy.
+
+2008-01-19 15:42  claus
+
+	* src/compiler.h: Make pgm/eep_...() macros a little bit more
+	  handy.
+
+2008-01-19 15:41  claus
+
+	* src/appdefs.h: Fix eeprom bit defs.
+
+2008-01-19 13:49  claus
+
+	* ChangeLog: Update.
+
+2008-01-19 13:46  claus
+
+	* NEWS, configure.ac, src/globals.c: Version stuff.
+
+2008-01-19 13:40  claus
+
+	* src/ssc32.c: EEPROM fixes.
+
+2008-01-19 13:40  claus
+
+	* src/regrw.c: EEPROM fixes.
+
+2008-01-19 13:40  claus
+
+	* src/pulsedge.c: Fix broken assembler stuff.
+
+2008-01-19 13:39  claus
+
+	* src/globals.h: txq_nbytes must be volatile.
+
+2008-01-19 13:39  claus
+
+	* src/globals.c: txq_nbytes must be volatile.
+
+2008-01-19 13:39  claus
+
+	* src/compiler.h: EEPROM fixes.
+
+2008-01-19 13:39  claus
+
+	* src/cmdproc.c: EEPROM fixes.
+
+2008-01-19 13:36  claus
+
+	* src/appdefs.h: Forgot some _BV() macros in some places.
+
+2008-01-18 01:39  claus
+
+	* configure.ac: Use ustar.
+
+2008-01-18 01:34  claus
+
+	* ChangeLog: Update.
+
+2008-01-18 01:32  claus
+
+	* src: svn:ignore issue.
+
+2008-01-18 01:32  claus
+
+	* src/ssc32.c: Fix regvar definition for serial xmit queues.
+
+2008-01-18 01:32  claus
+
+	* src/serial.c: Fix regvar definition for serial xmit queues.
+
+2008-01-18 01:32  claus
+
+	* src/globals.h: Fix regvar definition for serial xmit queues.
+
+2008-01-18 01:31  claus
+
+	* src/compiler.h: IO-ports should be volatile.
+
+2008-01-18 01:31  claus
+
+	* src/Makefile.am: Split off the eeprom section when creating a hex
+	  file.
+
+2008-01-17 11:02  claus
+
+	* ChangeLog: Update.
+
+2008-01-17 11:00  claus
+
+	* configure.ac: Update the version.
+
+2008-01-17 11:00  claus
+
+	* NEWS: Update.
+
+2008-01-17 10:58  claus
+
+	* configure.ac: Put gcc into the name, not the version.
+
+2008-01-17 10:58  claus
+
+	* src/globals.c: Version stuff.
+
+2008-01-17 10:57  claus
+
+	* gccasm.pl: line directive.
+
+2008-01-17 10:43  claus
+
+	* .: svn:ignore
+
+2008-01-17 10:42  claus
+
+	* COPYING, NEWS, configure.ac, src/Makefile.am: Update.
+
+2008-01-17 10:04  claus
+
+	* src/cmdproc.c, src/eeprom.c, src/regrw.c, src/serial.c,
+	  src/ssc32.c: Fix some accesses to progmem data for gcc.
+
+2008-01-17 09:15  claus
+
+	* src/compiler.h: Compiler defines (CV <-> gcc)
+
+2008-01-17 09:15  claus
+
+	* gccasm.pl, src/Makefile.am, src/abcd.c, src/abcd.h,
+	  src/appdefs.h, src/cmdproc.c, src/cmdproc.h, src/eeprom.c,
+	  src/eeprom.h, src/globals.c, src/globals.h, src/gpseq.c,
+	  src/gpseq.h, src/hexapod.c, src/hexapod.h, src/ldscript.m168,
+	  src/pulsedge.c, src/pulsedge.h, src/regrw.c, src/regrw.h,
+	  src/serial.c, src/serial.h, src/ssc32.c: Make it compile; needs
+	  further polishing before it can work.
+
+2008-01-16 19:12  claus
+
+	* src/hex2abl.exe: Not needed here.
+
+2008-01-16 19:12  claus
+
+	* src/abcd.c, src/abcd.h, src/appdefs.h, src/cmdproc.c,
+	  src/cmdproc.h, src/eeprom.c, src/eeprom.h, src/globals.c,
+	  src/globals.h, src/gpseq.c, src/gpseq.h, src/hex2abl.exe,
+	  src/hexapod.c, src/hexapod.h, src/numtypes.h, src/pulsedge.c,
+	  src/pulsedge.h, src/regrw.c, src/regrw.h, src/serial.c,
+	  src/serial.h, src/ssc32.c, src/ssc32.prj: New firmware source,
+	  not yet tailored for gcc.
+
+2008-01-16 19:11  claus
+
+	* README.TXT-LYNX: Update to readme.txt for new firmware.
+
+2008-01-16 19:09  claus
+
+	* src/abcd.c, src/abcd.h, src/appdefs.h, src/cmdproc.c,
+	  src/cmdproc.h, src/compiler.h, src/globals.c, src/globals.h,
+	  src/hexapod.c, src/hexapod.h, src/ldscript.m8, src/numtypes.h,
+	  src/old_ssc32.c, src/pulsedge.c, src/pulsedge.h, src/serial.c,
+	  src/serial.h, src/ssc32.c, src/ssc32.prj: Old code.
+
+2008-01-16 19:06  claus
+
+	* configure.ac: Set arch to atmega168
+
+2008-01-16 19:05  claus
+
+	* src/ldscript.m168: avr5 ld-script taylored for atmega168
+
+2008-01-16 19:04  claus
+
+	* .: Copied.
+
+2008-01-16 18:45  claus
+
+	* : rename
+
+2008-01-02 05:18  claus
+
+	* : Update.
+
+2008-01-02 05:18  claus
+
+	* : Make sure the beast still compiles with CV, testing cannot be
+	  done, I
+	  do not own that IDE, and do not plan to buy myself a copy.
+
+2008-01-02 04:39  claus
+
+	* : Add pulsedge.c and serial.c to EXTRA_DIST:
+
+2008-01-02 04:36  claus
+
+	* : Add the CodeVision project file to EXTRA_DIST.
+
+2008-01-02 03:57  claus
+
+	* : Update.
+
+2008-01-02 03:56  claus
+
+	* : Typo.
+
+2008-01-02 03:03  claus
+
+	* : svn:ignore issues.
+
+2008-01-02 03:03  claus
+
+	* : svn:ignore issues.
+
+2008-01-02 03:03  claus
+
+	* : svn:ignore issues.
+
+2008-01-02 03:02  claus
+
+	* : Fiddle with bug fixes. Finally, we have a working version.
+
+2008-01-02 03:01  claus
+
+	* : Renamed.
+
+2008-01-02 02:55  claus
+
+	* : Fiddle with the build system.
+
+2008-01-02 02:54  claus
+
+	* : A little bit of documentation.
+
+2007-12-31 18:15  claus
+
+	* : Fiddle with linker scripts etc.
+
+2007-12-31 18:15  claus
+
+	* : svn:ignore issue.
+
+2007-12-31 18:14  claus
+
+	* : Use a linker script.
+
+2007-12-31 18:14  claus
+
+	* : Use "compiler.h".
+
+2007-12-31 18:14  claus
+
+	* : Use "compiler.h".
+
+2007-12-31 18:14  claus
+
+	* : Use "compiler.h".
+
+2007-12-31 18:13  claus
+
+	* : Fiddle with in-flash allocation of command-parse table.
+
+2007-12-31 18:13  claus
+
+	* : Special LD-script for Atmega8, reserving the lower 160 bytes of
+	  SRAM
+	  for the rx/tx_queue pointers.
+
+2007-12-31 18:12  claus
+
+	* : Not needed.
+
+2007-12-31 18:12  claus
+
+	* : Compiler/porting issues.
+
+2007-12-31 15:31  claus
+
+	* : svn:ignore stuff
+
+2007-12-31 15:31  claus
+
+	* : svn:ignore stuff
+
+2007-12-31 15:31  claus
+
+	* : Cleanup.
+
+2007-12-31 15:31  claus
+
+	* : strcmpf() is strcmp_P() with GNU tool-chain.
+
+2007-12-31 15:30  claus
+
+	* : Missing include file.
+
+2007-12-31 15:30  claus
+
+	* : Handle interrupt stuff correctly (hopefully). Cope with inline
+	  assembly.
+
+2007-12-31 15:29  claus
+
+	* : No longer needed.
+
+2007-12-31 15:29  claus
+
+	* : Handle inline assembly.
+
+2007-12-31 15:28  claus
+
+	* : Simple perl-script to convert from code-vision inline assembly
+	  to gcc
+	  inline assembly.
+
+2007-12-31 15:28  claus
+
+	* : Simple perl-script to convert from code-vision inline assembly
+	  to gcc
+	  inline assembly.
+
+2007-12-31 04:38  claus
+
+	* : InterruptServiceRoutine
+
+2007-12-31 04:38  claus
+
+	* : svn:ignore
+
+2007-12-31 04:38  claus
+
+	* : svn:ignore
+
+2007-12-29 18:20  claus
+
+	* : No m4 files needed yet.
+
+2007-12-29 18:17  claus
+
+	* : svn:ignore
+
+2007-12-29 18:17  claus
+
+	* : svn:ignore
+
+2007-12-29 18:16  claus
+
+	* : Automake source.
+
+2007-12-29 18:16  claus
+
+	* : ignore
+
+2007-12-29 18:16  claus
+
+	* : In progress of "porting" to the GNU-toochain.
+
+2007-12-27 19:59  claus
+
+	* : Top-level directory
+
+2007-12-26 11:50  claus
+
+	* : SSC-32 servo controller
+

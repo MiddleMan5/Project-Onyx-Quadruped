@@ -1,0 +1,155 @@
+Contents
+========
+1. Intro
+2. Prerequisites
+3. Quick Install
+4. Porting Issues
+5. Compiling "by Hand"
+
+1. Intro
+~~~~~~~~
+This is a port of the SSC-32 firmware to the GNU compiler
+tool-chain. The original firmware is for the CodeVision AVR
+C-compiler.
+
+The original version of the software is freely available from the
+Lynxmotion-website at
+
+http://www.lynxmotion.com/images/html/proj078.htm
+
+Their copyright-notice can be found in the file COPYING, as usual.
+
+2. Prerequisites
+~~~~~~~~~~~~~~~~
+a) A version of the GNU cross-compilation tool-chain for the AVR
+   architecture:
+
+   avr-{gcc,as,ld,objcopy,objdump}
+
+  The GNU compiler tool-chain is available for a wide variety of
+  systems. In particular, there is a package called "WinAVR"
+  (http://winavr.sourceforge.net/) which contains this tool-chain for
+  MS Windows (nope, I'm not using MS windows, I'm a Linux-fan).
+
+b) Besides the cross-compilation tool-chain you will need one version
+  of the ``hex2abl'' to convert the binary to a format which can be
+  fed directly to the boot-loader of the SSC-32. The Lynxmotion
+  download-site mentioned above contains a version which compiles just
+  fine with the GNU C++-compiler.
+
+c) The separate ``avr-loader'' package contains the boot-loader from
+  the Lynxmotion download site wrapped into yet another autoconf'ed
+  package. That package also contains the source-code of hex2abl.
+
+3. Quick Install
+~~~~~~~~~~~~~~~~
+a) Make sure you have all needed tools.
+b) Unpack and compile the stuff:
+
+  > tar -xjf ssc-32-1.06.tar.bz2
+  > cd ssc-32-1.06
+  > configure
+  > make
+
+  If the final linking step fails, then is due to a bug in the GNU
+  binutils package. To solve this, either recompile with
+
+  > make RELAX=
+
+  or apply the patch at the end of this README to the GNU binutils
+  package and reinstall that package.
+
+  If the compilation worked out ok you should have a file
+
+  src/ssc32.abl
+
+c) Flash the new firmware image to the SSC-32. You can do this either
+  using Lynxmotions ``LynxTerm'' program, or just by up-loading the
+  ``.abl'' file using your favourite terminal program. The ``.abl''
+  file is just a collection of commands understood by the boot-loader.
+
+  DO THIS AT YOUR OWN RISK.
+   
+d) See the file INSTALL for generic installation instructions.
+
+4. Porting Issues
+~~~~~~~~~~~~~~~~~
+
+CodeVision's compiler defines the pre-processor symbol
+__CODEVISIONAVR__, gcc defines the symbol __GNUC__. In principle the
+sources should still compile with CV's C-compiler. The following
+issues arise when converting code written for CodeVision's C-compiler
+to the GNU C-compiler:
+
+a) GCC does not know about a "bit" data-type, accessing inidividual
+  bits of, e.g., I/O ports via the construct PORT.#BIT is not possible.
+
+b) Program-space access in GCC is quite flakey; one has to use special
+  ``pgm_read_byte/word()'' functions for doing so.
+
+c) Inline assembly works different:
+  There are no "#asm/#endasm"-statements. I have written a small
+  "gccasm" perl-script which converts inline assembler sections
+  line-by-line into the GCC-flavour of inline assembly. This concerns
+  the two files pulsedge.c and serial.c, the make-process converts the
+  files on the fly into ``pulsedge.gccasm.c'' and ``serial.gccasm.c''.
+
+d) Inline assembly works different, luckily:
+  With gcc it is possible to write assembler templates and let the
+  compiler load the values of local variables as appropriate. This
+  concerns the file pulsedge.c
+
+5. Compiling "by Hand"
+~~~~~~~~~~~~~~~~~~~~~~
+The source-code is located in the sub-directory src/. If you do not
+like the GNU build system (i.e. the autoconf/automake combo), then it
+should be fairly easy to comile the stuff with your favourite IDE,
+e.g. Eclipse, or whatever. In principle, it is possible to compile and
+link the stuff with the following command:
+
+avr-gcc -DSWVER=\"1.06XE-GCC\" \
+ -Os -Wl,--relax -Wl,--pmem-wrap-around=8k -mmcu=atmega8 \
+ -T ldscript.m8 -Wl,-Map,ssc32.map \
+ -o ssc32 \
+ ssc32.c abcd.c globals.c cmdproc.c hexapod.c \
+ pulsedge.gccasm.c serial.gccasm.c
+
+Note that the "--relax" linker option probably needs the following
+patch applied to the GNU binutils package. Or just omit the
+"-Wl,--relay" option given in the command-line above.
+
+################################################################################
+#
+# Patch to fix a bug relaxation bug in binutils-2.18.
+#
+--- bfd/elf32-avr.c.old	2007-08-06 21:59:24.000000000 +0200
++++ bfd/elf32-avr.c	2008-01-02 01:53:43.000000000 +0100
+@@ -1679,6 +1679,7 @@
+               /* Go get them off disk.  */
+               if (! bfd_malloc_and_get_section (abfd, sec, &contents))
+                 goto error_return;
++	      elf_section_data (sec)->this_hdr.contents = contents;
+             }
+         }
+ 
+@@ -1687,11 +1688,16 @@
+         {
+           isymbuf = (Elf_Internal_Sym *) symtab_hdr->contents;
+           if (isymbuf == NULL)
+-            isymbuf = bfd_elf_get_elf_syms (abfd, symtab_hdr,
+-                                            symtab_hdr->sh_info, 0,
+-                                            NULL, NULL, NULL);
++	    {
++	      isymbuf = bfd_elf_get_elf_syms (abfd, symtab_hdr,
++					      symtab_hdr->sh_info, 0,
++					      NULL, NULL, NULL);
++	      symtab_hdr->contents = (unsigned char *)isymbuf;
++	    }
++
+           if (isymbuf == NULL)
+             goto error_return;
++
+         }
+ 
+ 
+################################################################################

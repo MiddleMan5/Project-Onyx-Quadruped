@@ -1,0 +1,114 @@
+2008-01-02 03:57  claus
+
+	* AUTHORS: Fill with content.
+
+2008-01-02 03:55  claus
+
+	* ChangeLog: Update.
+
+2008-01-02 03:55  claus
+
+	* .: svn:ignore stuff.
+
+2008-01-02 03:54  claus
+
+	* src/Makefile.am: Distribute all needed stuff.
+
+2008-01-02 03:54  claus
+
+	* configure.ac: Do not check for avrdude, not used yet.
+
+2008-01-02 03:54  claus
+
+	* Makefile.am: Distribute headers/
+
+2008-01-02 03:53  claus
+
+	* AUTHORS, COPYING, ChangeLog, NEWS, README: Some docs.
+
+2007-12-31 18:59  claus
+
+	* configure.ac: Check for the C-compiler.
+
+2007-12-31 18:59  claus
+
+	* util/Makefile.am: Ok, this is plain c.
+
+2007-12-31 18:59  claus
+
+	* util/hex2abl.c: Renamed from hex2abl.cpp.
+
+2007-12-31 18:59  claus
+
+	* util/hex2abl.cpp: Renamed to hex2abl.c.
+
+2007-12-31 18:22  claus
+
+	* src/bootldr168.asm: Set Baud-divisor to production setting.
+
+2007-12-30 22:33  claus
+
+	* .: svn:ignore issue.
+
+2007-12-30 22:32  claus
+
+	* Makefile.am, configure.ac: hex2abl utility.
+
+2007-12-30 22:32  claus
+
+	* util, util/Makefile.am, util/hex2abl.cpp: hex2abl utility.
+
+2007-12-30 22:31  claus
+
+	* src: Ignore some stuff.U
+
+2007-12-30 22:31  claus
+
+	* src/bootldr168.asm: Seemingly working version for 8MHz internal
+	  osc.
+
+2007-12-30 22:30  claus
+
+	* src/Makefile.am: preliminary fuse stuff.
+
+2007-12-29 19:17  claus
+
+	* configure.ac, src/Makefile.am: Tune the build-system.
+
+2007-12-29 19:13  claus
+
+	* src: Ignore issues.
+
+2007-12-29 19:13  claus
+
+	* ., src: svn:ignore
+
+2007-12-29 19:12  claus
+
+	* ., configure.ac, src/Makefile.am: svn:ignore
+
+2007-12-29 18:34  claus
+
+	* headers/m168def.inc, headers/m8def.inc, m168def.inc, m8def.inc:
+	  Renamed.
+
+2007-12-29 18:33  claus
+
+	* headers: Directory for atmega header-files.
+
+2007-12-29 18:33  claus
+
+	* bootldr168.asm, bootldr168.txt, bootldr8.asm, bootldr8.txt,
+	  src/bootldr168.asm, src/bootldr168.txt, src/bootldr8.asm,
+	  src/bootldr8.txt: Renamed.
+
+2007-12-29 18:31  claus
+
+	* Makefile.am, configure.ac, src, src/Makefile.am: GNU
+	  build-system.
+
+2007-12-29 18:22  claus
+
+	* ., bootldr168.asm, bootldr168.txt, bootldr8.asm, bootldr8.txt,
+	  m168def.inc, m8def.inc: Imported Lynxmotion boot-loader for AVR
+

@@ -1,0 +1,11 @@
+2.02GP June 2008
+  * new binary modifier command
+  * new asynchronous group move command
+  * new baud-rate (rather: bit-rate) command
+  * bug fixes
+2.01_BETA1.02 January 2008
+  The initial port was broken, fix pulse-width computation and eeprom
+  access
+2.01_BETA1-GCC January 2008
+  Initial port of the SSC-32 firmware to the GNU compiler tool-chain.
+

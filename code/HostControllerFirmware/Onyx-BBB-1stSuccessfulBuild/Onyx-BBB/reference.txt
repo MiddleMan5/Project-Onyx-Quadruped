@@ -1,0 +1,62 @@
+
+//                 ONYX
+//                  __
+//Rear Right:4 |   |SC|   |Rear Left:3           
+//             |___|32|___|
+//                  ||
+//              __|wMPU|__
+//             |          |
+//Front Right:1|          |Front Left:2
+//
+//Servo Groups:
+//  Group Name (HIP,KNEE,ANKLE):GROUP #
+//   Front Right (16,17,18)    :1
+//   Front Left  (0,1,2)       :2
+//   Rear Left   (12,13,14)    :3
+//   Rear Right  (28,29,30)    :4
+
+
+
+
+//Leg Measurements
+//Diagram:  
+
+//(x4)
+/*[S]-C2K-[S] 
+           |
+          K2K
+           |
+          [S]
+           |
+          A2K
+           |
+         __ ___
+*/
+
+
+//Quadruped leg naming scheme:
+//coxa-knee-ankle-(foot)
+
+
+//Top-View 
+//FL-------FR
+// |     / |
+// |   /   106.248mm
+// | /     |
+//RL-------RR
+//
+// 139.720mm
+
+//Current Onyx Mk1 Data:
+
+//Hypotenuse length is 175.529mm
+//Center Hypotenuse is 87.7645mm
+
+//Angle RL.FR.RR =37.2506 Degrees
+//Angle RL.FR.FL =52.7494 Degrees
+
+//Center is defined as the midpoint of the X and Y lengths between coxas
+//Center is (139.720/2,106.248/2)
+//Center is (69.860mm,53.124mm)
+
+//HipWidth

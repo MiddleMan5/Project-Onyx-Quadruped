@@ -1,0 +1,17 @@
+The source-code for the SSC-32 is intellectual property of Lynxmotion, Inc.
+On their web-site, the following copyright notice can be found:
+
+
+  SSC-32 Open-Source Information
+
+  The servo controller is Open Source which means we are posting the
+  source code for the bootloader and firmware. The goal is to have an
+  affordable platform that many people will provide firmware for. It
+  should also help many aspiring programmers learn some tricks. Anyone
+  can use the source code to write specialized firmware, providing you
+  allow Lynxmotion, Inc. to publish it for others to enjoy, and it is
+  not used in a commercial product. As it is, this servo controller
+  will outperform controllers costing two or three times as
+  much. Having several "flavors" of the firmware will make this an
+  even better value.
+
