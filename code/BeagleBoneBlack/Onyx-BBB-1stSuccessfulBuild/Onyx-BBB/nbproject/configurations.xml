@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="libraries" displayName="libraries" projectFiles="true">
+        <logicalFolder name="libarduino" displayName="libarduino" projectFiles="true">
+          <logicalFolder name="cores" displayName="cores" projectFiles="true">
+            <logicalFolder name="virtual" displayName="virtual" projectFiles="true">
+              <logicalFolder name="linux" displayName="linux" projectFiles="true">
+                <itemPath>libraries/libarduino/cores/virtual/linux/i2c-dev.h</itemPath>
+              </logicalFolder>
+              <itemPath>libraries/libarduino/cores/virtual/Arduino.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/HardwareSerial.cpp</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/HardwareSerial.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/Print.cpp</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/Print.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/Stream.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/WCharacter.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/WConstants.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/WMath.cpp</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/WMath.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/WString.cpp</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/WString.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/binary.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/i2c.c</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/i2c.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/linux-virtual.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/main.cpp</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/sysfs.c</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/sysfs.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/virtual_main.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/wiring.c</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/wiring.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/wiring_analog.c</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/wiring_analog.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/wiring_digital.c</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/wiring_digital.h</itemPath>
+              <itemPath>libraries/libarduino/cores/virtual/wiring_shift.c</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="libraries" displayName="libraries" projectFiles="true">
+            <logicalFolder name="LiquidCrystal"
+                           displayName="LiquidCrystal"
+                           projectFiles="true">
+              <itemPath>libraries/libarduino/libraries/LiquidCrystal/LiquidCrystal.cpp</itemPath>
+              <itemPath>libraries/libarduino/libraries/LiquidCrystal/LiquidCrystal.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="SPI" displayName="SPI" projectFiles="true">
+              <itemPath>libraries/libarduino/libraries/SPI/SPI.cpp</itemPath>
+              <itemPath>libraries/libarduino/libraries/SPI/SPI.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Stepper" displayName="Stepper" projectFiles="true">
+              <itemPath>libraries/libarduino/libraries/Stepper/Stepper.cpp</itemPath>
+              <itemPath>libraries/libarduino/libraries/Stepper/Stepper.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="Wire" displayName="Wire" projectFiles="true">
+              <itemPath>libraries/libarduino/libraries/Wire/Wire.cpp</itemPath>
+              <itemPath>libraries/libarduino/libraries/Wire/Wire.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <logicalFolder name="variants" displayName="variants" projectFiles="true">
+            <logicalFolder name="beaglebone" displayName="beaglebone" projectFiles="true">
+              <itemPath>libraries/libarduino/variants/beaglebone/pins_linux.h</itemPath>
+              <itemPath>libraries/libarduino/variants/beaglebone/variant.cpp</itemPath>
+              <itemPath>libraries/libarduino/variants/beaglebone/variant.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="cfa10036" displayName="cfa10036" projectFiles="true">
+              <itemPath>libraries/libarduino/variants/cfa10036/variants.cpp</itemPath>
+              <itemPath>libraries/libarduino/variants/cfa10036/variants.h</itemPath>
+            </logicalFolder>
+            <logicalFolder name="standard" displayName="standard" projectFiles="true">
+              <itemPath>libraries/libarduino/variants/standard/pins_linux.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+          <itemPath>libraries/libarduino/boards.txt</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Onyx" displayName="Onyx" projectFiles="true">
+          <itemPath>libraries/Onyx/Onyx.cpp</itemPath>
+          <itemPath>libraries/Onyx/Onyx.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="SSC32" displayName="SSC32" projectFiles="true">
+          <itemPath>libraries/SSC32/SSC32.cpp</itemPath>
+          <itemPath>libraries/SSC32/SSC32.h</itemPath>
+          <itemPath>libraries/SSC32/keywords.txt</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>source</Elem>
+    <Elem>libraries</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <commandLine>-lrt</commandLine>
+        </ccTool>
+      </compileType>
+      <item path="libraries/Onyx/Onyx.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="libraries/Onyx/Onyx.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="libraries/SSC32/SSC32.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="libraries/SSC32/SSC32.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="libraries/SSC32/keywords.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="libraries/libarduino/boards.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/Arduino.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/HardwareSerial.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/HardwareSerial.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/Print.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/Print.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/Stream.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/WCharacter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/WConstants.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/WMath.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/WMath.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/WString.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/WString.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/binary.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/i2c.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/i2c.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/linux-virtual.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/linux/i2c-dev.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/sysfs.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/sysfs.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/virtual_main.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring_analog.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring_analog.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring_digital.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring_digital.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring_shift.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/LiquidCrystal/LiquidCrystal.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/LiquidCrystal/LiquidCrystal.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/SPI/SPI.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/SPI/SPI.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/Stepper/Stepper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/Stepper/Stepper.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/Wire/Wire.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/Wire/Wire.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/variants/beaglebone/pins_linux.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/variants/beaglebone/variant.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/variants/beaglebone/variant.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/variants/cfa10036/variants.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/variants/cfa10036/variants.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/variants/standard/pins_linux.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="libraries/Onyx/Onyx.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="libraries/Onyx/Onyx.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="libraries/SSC32/SSC32.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="libraries/SSC32/SSC32.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="libraries/SSC32/keywords.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="libraries/libarduino/boards.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/Arduino.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/HardwareSerial.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/HardwareSerial.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/Print.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/Print.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/Stream.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/WCharacter.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/WConstants.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/WMath.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/WMath.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/WString.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/WString.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/binary.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/i2c.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/i2c.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/linux-virtual.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/linux/i2c-dev.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/sysfs.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/sysfs.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/virtual_main.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring_analog.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring_analog.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring_digital.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring_digital.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/cores/virtual/wiring_shift.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/LiquidCrystal/LiquidCrystal.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/LiquidCrystal/LiquidCrystal.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/SPI/SPI.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/SPI/SPI.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/Stepper/Stepper.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/Stepper/Stepper.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/Wire/Wire.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/libraries/Wire/Wire.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/variants/beaglebone/pins_linux.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/variants/beaglebone/variant.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/variants/beaglebone/variant.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/variants/cfa10036/variants.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/variants/cfa10036/variants.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libraries/libarduino/variants/standard/pins_linux.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
